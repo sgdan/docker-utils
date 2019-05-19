@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  busybox:
+    image: busybox:latest
+    volumes:
+    - .:/working
+    working_dir: /working
+
+  docker-utils:
+    build: .
+    image: sgdan/scratch:latest
+    volumes:
+    - .:/working
+    working_dir: /working
