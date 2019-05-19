@@ -12,3 +12,12 @@ of included utilities.
 This is intended to replace the utility "docker" image included in my
 [Toolkit](https://github.com/sgdan/toolkit) project which uses the 3 musketeers pattern
 to run Portainer, Concourse, Rancher 2.
+
+## Building with Concourse
+
+```sh
+fly -t toolkit login -k -c https://dockerlocal:8443 -u test -p test
+fly -t toolkit sync
+fly -t toolkit set-pipeline -c pipeline.yml -p docker-utils -l credentials.yml
+fly -t toolkit trigger-job -j docker-utils/publish -w
+```
