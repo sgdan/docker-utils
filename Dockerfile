@@ -1,4 +1,4 @@
-FROM docker:18.09
+FROM docker:18.09-dind
 
 LABEL maintainer="https://github.com/sgdan/docker-utils"
 
